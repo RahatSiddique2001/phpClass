@@ -1,23 +1,16 @@
-
-
-
-
-
 <?php
+
 require_once 'Book.php';
 require_once 'Customer.php';
 
-// Create Book objects
 $book1 = new Book(123456789, "Sample Book 1", "John Doe", 5);
 $book2 = new Book(987654321, "Sample Book 2", "Jane Smith", 3);
 $book3 = new Book(555555555, "Another Book", "Alice Johnson", 10);
 $book4 = new Book(999999999, "Mystery Book", "Bob Anderson", 7);
 
-// Add copies to some books
 $book2->addCopy(2);
 $book4->addCopy(5);
 
-// Create a Customer object
 $customer = new Customer(1, "Alice", "Johnson", "alice@example.com");
 
 ?>
