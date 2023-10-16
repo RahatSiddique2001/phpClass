@@ -1,16 +1,48 @@
+
+
+
+
+
 <?php
 require_once 'Book.php';
 require_once 'Customer.php';
 
-$book = new Book(123456789, "Sample Book", "John Doe", 5);
+// Create Book objects
+$book1 = new Book(123456789, "Sample Book 1", "John Doe", 5);
+$book2 = new Book(987654321, "Sample Book 2", "Jane Smith", 3);
+$book3 = new Book(555555555, "Another Book", "Alice Johnson", 10);
+$book4 = new Book(999999999, "Mystery Book", "Bob Anderson", 7);
 
-$book->addCopy(3);
+// Add copies to some books
+$book2->addCopy(2);
+$book4->addCopy(5);
 
+// Create a Customer object
 $customer = new Customer(1, "Alice", "Johnson", "alice@example.com");
 
-echo "Book Details:\n";
-echo $book . "\n";
-echo "Customer Details:\n";
-echo $customer . "\n";
-
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book and Customer Details</title>
+</head>
+<body>
+    <h1>Book Details</h1>
+    <table border="1">
+        <tr>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Available Copies</th>
+        </tr>
+        <?= $book1 ?>
+        <?= $book2 ?>
+        <?= $book3 ?>
+        <?= $book4 ?>
+    </table>
+
+    <h1>Customer Details</h1>
+    <?= $customer ?>
+</body>
+</html>
